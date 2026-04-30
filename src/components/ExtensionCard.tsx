@@ -5,6 +5,8 @@ interface Props {
 }
 
 const ExtensionCard = ({ extension }: Props) => {
+  const { isActive } = extension;
+  const activeClass = isActive ? "active" : "";
   return (
     <li className="extension">
       <div className="extension__grid">
@@ -16,7 +18,7 @@ const ExtensionCard = ({ extension }: Props) => {
       </div>
       <div className="extension__actions">
         <button className="btn btn--primary btn--remove">Remove</button>
-        <button className="btn btn--extension-toggle"></button>
+        <button className={`btn btn--extension-toggle ${activeClass}`}></button>
       </div>
     </li>
   );

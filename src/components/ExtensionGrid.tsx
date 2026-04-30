@@ -1,13 +1,14 @@
-import useExtensions from "../hooks/useExtensions";
+import useExtensionsContext from "../hooks/useExtensionsContext";
 import ExtensionCard from "./ExtensionCard";
 
 const ExtensionGrid = () => {
-  const { extensions } = useExtensions();
+  const { extensions } = useExtensionsContext();
+  console.log(extensions);
 
   return (
     <ul className="extensions__list">
-      {extensions.map((extension, index) => (
-        <ExtensionCard key={index} extension={extension}></ExtensionCard>
+      {extensions.map((extension) => (
+        <ExtensionCard key={extension.id} extension={extension}></ExtensionCard>
       ))}
     </ul>
   );
