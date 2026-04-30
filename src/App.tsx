@@ -1,11 +1,20 @@
 function App() {
   return (
-    <body className="dark-mode">
-      <button className="btn btn--primary btn--filter active">All</button>
-      <button className="btn btn--primary btn--remove">Remove</button>
-      <button className="btn btn--theme-toggle is-dar"></button>
-      <button className="btn btn--extension-toggle active"></button>
-    </body>
+    <div className="app">
+      <header className="header">
+        <div className="header__wrapper wrapper">
+          <a href="/">
+            <svg className="header__logo header__logo--dark">
+              <use href="/icons.svg#logo"></use>
+            </svg>
+            <svg className="header__logo header__logo--light">
+              <use href="/icons.svg#logo-light"></use>
+            </svg>
+          </a>
+          <button className="btn btn--theme-toggle"></button>
+        </div>
+      </header>
+    </div>
   );
 }
 
