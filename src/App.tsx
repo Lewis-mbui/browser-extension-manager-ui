@@ -1,22 +1,15 @@
+import { useState } from "react";
 import ExtensionGrid from "./components/ExtensionGrid";
 import FilterList from "./components/FilterList";
+import Header from "./components/Header";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+  const darkThemeClass = darkMode ? "dark-mode" : "";
+
   return (
-    <div className="app">
-      <header className="header">
-        <div className="header__wrapper wrapper">
-          <a href="/">
-            <svg className="header__logo header__logo--dark">
-              <use href="/icons.svg#logo"></use>
-            </svg>
-            <svg className="header__logo header__logo--light">
-              <use href="/icons.svg#logo-light"></use>
-            </svg>
-          </a>
-          <button className="btn btn--theme-toggle"></button>
-        </div>
-      </header>
+    <div className={`app ${darkThemeClass}`}>
+      <Header onToggleTheme={() => setDarkMode(!darkMode)} />
       <nav className="nav">
         <div className="nav__wrapper wrapper">
           <h1 className="extensions-title">Extensions List</h1>

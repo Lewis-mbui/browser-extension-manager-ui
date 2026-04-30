@@ -88,8 +88,6 @@
 
 body {
   font-family: var(--ff-primary);
-  background-color: var(--bg-body);
-  color: var(--color-body);
 }
 
 h1 {
@@ -190,8 +188,8 @@ img, svg {
 }
 
 .btn--extension-toggle {
-  width: 3.5rem;
-  height: 1.8rem;
+  width: 3.125rem;
+  height: 1.75rem;
   background-color: var(--bg-extension-toggle);
   border-radius: 100vw;
   position: relative;
@@ -201,13 +199,13 @@ img, svg {
   --transition-time: 200ms;
   content: '';
   position: absolute;
-  width: 1.5rem;
+  width: 1.4rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
   top: 50%;
   transform: translateY(-50%);
   background-color: var(--clr-neutral-0);
-  left: 2%;
+  left: 5%;
   transition: left var(--transition-time), transform var(--transition-time);
 }
 
@@ -216,12 +214,21 @@ img, svg {
 }
 
 .btn--extension-toggle.active::before {
- left: 98%;
+ left: 95%;
  transform: translate(-100%, -50%);
 }
 
 .btn--extension-toggle:hover {
   opacity: .8;
+}
+
+/* APP */
+.app {
+  min-height: 100vh;
+  background-color: darkred;
+  padding-bottom: 2.5rem;
+  background-color: var(--bg-body);
+  color: var(--color-body);
 }
 
 /* HEADER */
@@ -295,7 +302,7 @@ img, svg {
 
 /* EXTENSIONS */
 .extensions {
-  margin: 2.5rem 0;
+  margin-top: 2.5rem;
 }
 
 .extensions__list {
