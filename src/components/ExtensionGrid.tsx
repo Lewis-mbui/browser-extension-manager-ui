@@ -1,24 +1,12 @@
-import { useEffect, useState } from "react";
-
-interface Extension {
-  logo: string;
-  name: string;
-  description: string;
-}
+import useExtensions from "../hooks/useExtensions";
 
 const ExtensionGrid = () => {
-  const [extensions, setExtensions] = useState<Extension[]>([]);
-
-  useEffect(() => {
-    fetch("/src/data/data.json")
-      .then((res) => res.json())
-      .then((data) => setExtensions([...data]));
-  }, []);
+  const { extensions } = useExtensions();
 
   return (
     <ul>
-      {extensions.map((extension) => (
-        <li>{extension.name}</li>
+      {extensions.map((extension, index) => (
+        <li key={index}>{extension.name}</li>
       ))}
     </ul>
   );
