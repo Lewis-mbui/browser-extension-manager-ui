@@ -45,7 +45,7 @@ const ExtensionsProvider = ({ children }: Props) => {
   const [extensions, dispatch] = useReducer(extensionsReducer, []);
 
   useEffect(() => {
-    fetch("/public/data/data.json")
+    fetch("/data/data.json")
       .then((res) => res.json())
       .then((data) => dispatch({ type: "init", extensions: data }));
   }, []);
