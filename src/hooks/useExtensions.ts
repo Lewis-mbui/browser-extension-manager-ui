@@ -1,10 +1,5 @@
 import { useEffect, useState } from "react";
-
-interface Extension {
-  logo: string;
-  name: string;
-  description: string;
-}
+import type Extension from "../entities/Extension";
 
 const useExtensions = () => {
   const [extensions, setExtensions] = useState<Extension[]>([]);
