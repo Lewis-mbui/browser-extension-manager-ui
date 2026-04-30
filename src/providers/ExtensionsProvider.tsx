@@ -2,6 +2,11 @@ import { useEffect, useReducer, type ReactNode } from "react";
 import type Extension from "../entities/Extension";
 import ExtensionsContext from "../contexts/ExtensionsContext";
 
+interface InitializeExtensions {
+  type: "init";
+  extensions: Extension[];
+}
+
 interface ToggleExtension {
   type: "toggle";
   extensionId: number;
@@ -10,11 +15,6 @@ interface ToggleExtension {
 interface RemoveExtension {
   type: "remove";
   extensionId: number;
-}
-
-interface InitializeExtensions {
-  type: "init";
-  extensions: Extension[];
 }
 
 export type ExtensionAction =

@@ -1,4 +1,5 @@
 import type Extension from "../entities/Extension";
+import useExtensionsContext from "../hooks/useExtensionsContext";
 
 interface Props {
   extension: Extension;
@@ -7,6 +8,7 @@ interface Props {
 const ExtensionCard = ({ extension }: Props) => {
   const { isActive } = extension;
   const activeClass = isActive ? "active" : "";
+  const { dispatch } = useExtensionsContext();
   return (
     <li className="extension">
       <div className="extension__grid">
@@ -18,7 +20,12 @@ const ExtensionCard = ({ extension }: Props) => {
       </div>
       <div className="extension__actions">
         <button className="btn btn--primary btn--remove">Remove</button>
-        <button className={`btn btn--extension-toggle ${activeClass}`}></button>
+        <button
+          onClick={() =>
+            dispatch({ type: "toggle", extensionId: extension.id })
+          }
+          className={`btn btn--extension-toggle ${activeClass}`}
+        ></button>
       </div>
     </li>
   );

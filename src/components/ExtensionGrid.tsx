@@ -1,13 +1,21 @@
 import useExtensionsContext from "../hooks/useExtensionsContext";
 import ExtensionCard from "./ExtensionCard";
 
-const ExtensionGrid = () => {
+interface Props {
+  currentFilter: string;
+}
+
+const ExtensionGrid = ({ currentFilter }: Props) => {
   const { extensions } = useExtensionsContext();
-  console.log(extensions);
+  const visibleExtensions = extensions.filter((e) => {
+    if (currentFilter === "all") return e;
+    if (currentFilter === "active") return e.isActive;
+    if (currentFilter === "inactive") return !e.isActive;
+  });
 
   return (
     <ul className="extensions__list">
-      {extensions.map((extension) => (
+      {visibleExtensions.map((extension) => (
         <ExtensionCard key={extension.id} extension={extension}></ExtensionCard>
       ))}
     </ul>
