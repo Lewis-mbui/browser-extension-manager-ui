@@ -1,3 +1,4 @@
+import ExtensionGrid from "./components/ExtensionGrid";
 import FilterList from "./components/FilterList";
 
 function App() {
@@ -22,6 +23,11 @@ function App() {
           <FilterList />
         </div>
       </nav>
+      <section className="extensions">
+        <div className="extensions__wrapper wrapper">
+          <ExtensionGrid />
+        </div>
+      </section>
     </div>
   );
 }
