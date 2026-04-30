@@ -19,7 +19,14 @@ const ExtensionCard = ({ extension }: Props) => {
         </div>
       </div>
       <div className="extension__actions">
-        <button className="btn btn--primary btn--remove">Remove</button>
+        <button
+          onClick={() =>
+            dispatch({ type: "remove", extensionId: extension.id })
+          }
+          className="btn btn--primary btn--remove"
+        >
+          Remove
+        </button>
         <button
           onClick={() =>
             dispatch({ type: "toggle", extensionId: extension.id })
