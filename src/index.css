@@ -31,11 +31,33 @@
   --gradient-light: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
   --gradient-dark: linear-gradient(180deg, #040918 0%, #091540 100%);
 
+
+  --bg-body: var(--clr-neutral-300);
+  --bg-extension: var(--gradient-light);
+  --bg-theme-toggle: var(--clr-neutral-300);
+  --bg-active: var(--clr-red-700);
+
+  --color-body: var(--clr-neutral-800);
+  --color-extension: var(--clr-neutral-300);
+  --color-active: var(--clr-neutral-0);
+
+
   --ff-primary: 'Noto Sans', sans-serif;
 
   --fw-normal: 400;
   --fw-medium: 500;
   --fw-bold: 700;
+}
+
+.dark-mode {
+  --bg-body: var(--clr-neutral-900);
+  --bg-extension: var(--gradient-dark);
+  --bg-theme-toggle: var(--clr-neutral-600);
+  --bg-active: var(--clr-red-400);
+
+  --color-body: var(--clr-neutral-0);
+  --color-extension: var(--clr-neutral-600);
+  --color-active: var(--clr-neutral-800);
 }
 
 /* BASE STYLES */
