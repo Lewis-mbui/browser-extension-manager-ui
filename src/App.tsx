@@ -1,3 +1,5 @@
+import FilterList from "./components/FilterList";
+
 function App() {
   return (
     <div className="app">
@@ -14,6 +16,12 @@ function App() {
           <button className="btn btn--theme-toggle"></button>
         </div>
       </header>
+      <nav className="nav">
+        <div className="nav__wrapper wrapper">
+          <h1 className="extensions-title">Extensions List</h1>
+          <FilterList />
+        </div>
+      </nav>
     </div>
   );
 }
